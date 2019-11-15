@@ -1,0 +1,35 @@
+public class reverse {
+	
+void reverseIt(String s) {
+	char c[]=s.toCharArray();
+	int n=s.length();
+	int n2=(n-1);
+	int i=0;
+	while(i<n2)
+	{
+		if(c[i]>=65 && c[i]<=90 || c[i]>=97 && c[i]<=122)
+		{
+			if(c[n2]>=65 && c[n2]<=90 || c[n2]>=97 && c[n2]<=122)
+			{
+				char str=a[i];
+				c[i]=c[n2];
+				c[n2]=str;
+				i++;
+				n2--;
+			}
+			else
+				n2--;	
+		}
+		else
+			i++;
+		
+	}
+	 s=new String(c);
+	System.out.print(s);
+}
+	public static void main(String args[]) {
+		reverse r=new reverse();
+		String a="ac#bf%%f@g";
+		r.reverseIt(a);
+	}
+}
