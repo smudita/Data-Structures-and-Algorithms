@@ -1,0 +1,60 @@
+import java.util.LinkedList;
+import java.util.*;
+
+public class Main {
+	Node head;
+	static class Node {
+		int data;
+		Node next;
+		Node(int d){
+			data=d;
+			next=null;
+		}
+		
+	}			
+	void rotateIt(int k)
+	{
+		Node n;
+		int i=0;
+		n=head;
+		Node prev=null;
+		while(i<k) {
+		while(n.next!=null) {
+			prev=n;
+			n=n.next;
+		}
+		prev.next=null;
+		n.next=head.next;
+		head=n;
+		
+		}
+		
+	}
+	void printList(int data) {
+		Node curr=new Node(data);
+		curr.next=head;
+		head=curr;
+	}
+	public void displayList()
+	{
+		Node temp_node=head;
+		while(temp_node!=null) {
+			System.out.print(temp_node.data+" ");
+			temp_node=temp_node.next;
+		}
+	}
+
+		public static void main(String args[]) {
+			Scanner s=new Scanner(System.in);
+			Main list1=new Main();
+			list1.printList(5);
+			list1.printList(4);
+			list1.printList(3);
+			list1.printList(2); 
+			list1.printList(1);
+			list1.rotateIt(3);
+			System.out.println("\nHere is the linked list: ");
+			list1.displayList();
+			
+	}
+	}
