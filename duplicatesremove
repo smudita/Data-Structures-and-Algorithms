@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main {
+static void removeDuplicates(String str,int i,String str1) {
+	//String str1=new String();
+	//char c[]=str.toCharArray();
+
+	if(i==str.length())
+		System.out.println(str1);	
+		
+	else
+		 {  if(i==0&&str.charAt(i)!=str.charAt(i+1)) {
+			   str1+=str.charAt(i);
+			  
+		   }  
+		   else if(i==str.length()-1&&str.charAt(i)!=str.charAt(i-1))
+	          str1+=str.charAt(i);
+	     
+			   
+		   else if(i<str.length()&&str.charAt(i)!=str.charAt(i+1)&&str.charAt(i)!=str.charAt(i-1)) {
+			   str1+=str.charAt(i);
+			  
+	   }
+	   removeDuplicates(str,i+1,str1);
+		 }
+		 
+		   
+	
+}
+
+public static void main(String args[]) {
+	String str="hellopeeps";
+	String str1=new String();
+	removeDuplicates(str,0,str1);
+	
+}
+}
