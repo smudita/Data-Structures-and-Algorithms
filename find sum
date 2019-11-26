@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main {
+static void findSum(int a1[],int a2[],int sum) {
+	HashSet<Integer> set = new HashSet<Integer>(); 
+    for(int j=0;j<a2.length;j++) {
+    	set.add(a2[j]);
+    }
+	for(int i=0;i<a1.length;i++) {
+		int left=sum-a1[i];
+		if(set.contains(left))
+			System.out.println(a1[i]+","+left);
+	}
+}
+public static void main(String args[]) {
+	Scanner sc=new Scanner(System.in);
+	
+	int num=sc.nextInt();
+	
+	int a1[]= {0,1,2};
+	int a2[]= {6,7,8};
+	findSum(a1,a2,num);
+}
+}
