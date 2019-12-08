@@ -1,0 +1,38 @@
+public class leafs {
+	static class Node{
+		int key;
+		Node left,right;
+		public Node(int item) {
+			key=item;
+			left=right=null;
+		}
+	}
+	static Node root;
+	leafs(){
+		root=null;
+	}
+	void traverse(Node root) {
+		if(root==null) {
+			System.out.println("not valid");
+		}
+		if(root.left==null&&root.right==null) {
+			System.out.println("leaf"+root.key);
+		}
+		//while(root.left!=null&&root.right!=null)
+		else {
+			traverse(root.left);
+			traverse(root.right);
+		}
+	}
+	public static void main(String args[]) {
+		leafs l=new leafs();
+		root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(6);
+        root.left.left = new Node(3);
+        root.right.left = new Node(7);
+        root.left.right = new Node(4);
+        root.right.right = new Node(8);
+        l.traverse(root);
+	}
+}
