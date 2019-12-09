@@ -1,0 +1,55 @@
+import java.util.Arrays;
+
+public class merge {
+static int[] mergerArrays(int a1[],int a2[]) {
+	int i=0,k=0;
+	int n1=a1.length;
+	int n2=a2.length;
+	int l=n1+n2;
+	int a3[]=new int[l];
+	while(i<n1&&i<n2) {
+		if(a1[i]>a2[i]) {
+			a3[k]=a2[i];
+			k++;
+			a3[k]=a1[i];
+			k++;
+			i++;
+		}
+		else {
+			a3[k]=a1[i];
+		k++;
+		a3[k]=a2[i];
+		k++;
+		i++;
+	}
+	}
+	while(i<n1) {
+		a3[k]=a1[i];
+		k++;
+		i++;
+		
+	}
+	while(i<n2) {
+		a3[k]=a2[i];
+		k++;
+		i++;
+	}
+	return a3;
+}
+static void printIt(int a3[]) {
+	Arrays.sort(a3);
+	for(int k=0;k<a3.length;k++) {
+		System.out.println(a3[k]);	}
+		
+	}
+public static void main(String args[]) {
+	int a1[]= {1,2,8};
+	int a2[]= {4,5,6,7,9};
+	
+	int a3[]=mergerArrays(a1,a2);
+	printIt(a3);
+	
+	
+}
+
+}
