@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Main {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int i,found=0;
+	int t=sc.nextInt();
+	for(i=0;i<t;i++){
+	int sizeis=sc.nextInt();
+	
+	int arr[]=new int[sizeis];
+	for(i=0;i<sizeis;i++) {
+		arr[i]=sc.nextInt();
+	}
+	for(i=0;i<sizeis;i++) {
+	    
+	    int sq1=arr[i]*arr[i];
+	    
+		for(int j=i+1;j<sizeis;j++) {
+			
+			int sq2=arr[j]*arr[j];
+			
+			int py=sq1+sq2;
+			
+			for(int k=j+1;k<sizeis;k++) {
+				int sq3=arr[k]*arr[k];
+				
+				if(sq3==py)
+					found=1;
+				
+			}
+		}
+	}
+	if(found==1)
+		System.out.println("yes");
+	else
+		System.out.println("no");
+	}
+}
+}
