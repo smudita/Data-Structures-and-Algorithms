@@ -1,0 +1,28 @@
+import java.util.*;
+//import java.util.HashSet;
+public class Main {
+	public static void anagrams(String args[]) {
+		Scanner s=new Scanner(System.in);
+		HashSet<Character>h=new HashSet<>();
+		int i,count=0;
+		String s1=s.next();
+		String s2=s.next();
+		char c1[]=s1.toCharArray();
+		char c2[]=s2.toCharArray();
+		for( i=0;i<s1.length();i++) {
+			h.add(c1[i]);
+		}
+		for( i=0;i<s2.length();i++) {
+			if(h.contains(c2[i])) {
+				count++;
+			}
+		}
+		if(count==s2.length()&&s2.length()==s1.length())
+			System.out.println("anagrams");
+		else
+			System.out.println("not anagrams");
+		
+	}
+
+}
+
