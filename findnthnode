@@ -1,0 +1,56 @@
+import java.util.*;
+public class Nth
+{
+   class Node{
+       Node next;
+       int data;
+       Node(int d){
+           data=d;
+           next=null;
+           
+       }
+       
+   }
+   Node head;
+	    void push(int key){
+	        Node temp=new Node(key);
+	        temp.next=head;
+	        head=temp;
+	    }
+	    void printList(){
+	        Node temp=head;
+	        while(temp!=null){
+	            System.out.println(temp.data);
+	            temp=temp.next;
+	        }
+	    }
+	    void find(int d){
+	        int count=0;
+	        Node curr=head;
+	        while(curr!=null){
+	            count++;
+	            curr=curr.next;
+	        }
+	        int k=count-d;
+	        int count1=0;
+	        curr=head;
+	        while(curr!=null && count1!=k){
+	            curr=curr.next;
+	            count1++;
+	        }
+	       
+	        System.out.println("node is:" +curr.data);
+	    }
+	   	public static void main(String[] args) {
+	    //Scanner sc=new Scanner(System.in);
+	    Nth m=new Nth();
+	   // m.head=m.push(10);
+	    m.push(10);
+	    m.push(8);
+	    m.push(6);
+	    m.push(4);
+	    m.push(2);
+	    m.find(2);
+	    
+	}
+}
