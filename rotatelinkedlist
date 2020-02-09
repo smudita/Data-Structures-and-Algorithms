@@ -1,0 +1,52 @@
+public class Main
+{
+   class Node{
+       Node next;
+       int data;
+       Node(int d){
+           data=d;
+           next=null;
+       }
+   }
+   Node head;
+   void push(int key){
+       Node temp=new Node(key);
+        temp.next=head;
+        head=temp;
+       
+   }
+   void printlist(){
+       Node temp=head;
+       while(temp!=null){
+           System.out.println(temp.data);
+           temp=temp.next;
+       }
+   }
+   void rotate(int k){
+       Node prev=null;
+       Node temp=head;
+       int count=0;
+       while(count<k){
+           while(temp.next!=null){
+               prev=temp;
+               temp=temp.next;
+           }
+           temp.next=head;
+           head=temp;
+           prev.next=null;
+           count++;
+       }
+       
+   }
+   public static void main(String args[]){
+       Main m=new Main();
+       m.push(1);
+       m.push(2);
+       m.push(3);
+       m.push(4);
+       m.push(5);
+       m.rotate(2);
+       m.printlist();
+   }
+	}
+
