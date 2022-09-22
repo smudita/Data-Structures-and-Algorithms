@@ -1,0 +1,27 @@
+//Find if an element exists in array using recursion
+class Main {
+     static int arr[] = {12, 34, 54, 2, 3};
+  static int linearSearch(int A[], int size, int x){
+      int itr = 0;
+      if (size<=0){
+          return -1;
+           }
+      if (A[size-1]==x){
+          return 1;
+      }
+      else{
+           itr = linearSearch(A,size-1,x);
+      }
+      return itr;
+    }
+    public static void main(String args[]){
+               int x = 66; 
+          
+        //Method call to find x
+        int index = linearSearch(arr, arr.length, x);
+        if (index != -1)
+           System.out.println("Element " + x + " is present");
+        else
+            System.out.println("Element " + x + " is not present");
+        }
+    }
